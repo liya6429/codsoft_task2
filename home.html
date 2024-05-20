@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            background-color:azure;
+        }
+        h1{
+            padding-left: 42%;
+            padding-top: 5%;
+        }
+        .container{
+            border: 2px solid black;
+            padding-left: 6%;
+            padding-top: 1%;
+            padding-bottom: 1%;
+            margin-left: 140mm;
+            margin-right: 140mm;
+            background-color:lightcyan;
+        }
+        button{
+            background-color: brown;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Calculator</h1>
+    <div class="container">
+        <form action="calculate" method="post">
+            {% csrf_token %}
+            <label for="">Enter 1st input:</label>
+            <input type="number" name="num1"><br><br>
+            <label for="">Enter 2nd input:</label>
+            <input type="number" name="num2"><br><br>
+            <label for="">Select Operation:</label>
+            <select name="operation">
+                <option value="">select the operator</option>
+                <option value="add">+</option>
+                <option value="subtract">-</option>
+                <option value="multiply">*</option>
+                <option value="divide">/</option>
+            </select><br><br>
+            <button type="submit">calculate</button>
+        </form>
+    </div>
+</body>
+</html>
